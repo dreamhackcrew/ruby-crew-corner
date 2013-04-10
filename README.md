@@ -4,21 +4,15 @@ Crew Corner API client
 
 ## Installation
 
-### With bundler
-
 Add to Gemfile:
 
 ```Ruby
-gem 'crew-corner'
+gem 'crew-corner', git: 'git://github.com/dreamhackcrew/ruby-crew-corner.git'
 ```
 
 Execute:
 
     $ bundle
-
-### Without bundler
-
-    $ gem install crew-corner
 
 ## Usage
 
