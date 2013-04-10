@@ -8,9 +8,9 @@ Crew Corner API client
 
 Add to Gemfile:
 
-    ```Ruby
-    gem 'crew-corner'
-    ```
+```Ruby
+gem 'crew-corner'
+```
 
 Execute:
 
@@ -22,10 +22,10 @@ Execute:
 
 ## Usage
 
-    ```Ruby
-    require 'crew_corner'
+```ruby
+require 'crew_corner'
 
-    active_events = CrewCorner::Event.active
-    all_events = CrewCorner::Event.all
-    specific_event = CrewCorner::Event.find(9)
-    ```
+active_events = CrewCorner::Event.active
+all_events = CrewCorner::Event.all
+specific_event = CrewCorner::Event.find(9)
+```
