@@ -51,12 +51,11 @@ module CrewCorner
           when :integer
             value.to_i
           when :boolean
-            value == "Y"
+            value == 'Y'
           else
             value
           end
         rescue
-          Rails.logger.warn("Couldn't convert value \"#{value}\" for attribute \"#{attribute}\"")
           nil
         end
 
