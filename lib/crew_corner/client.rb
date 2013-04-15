@@ -4,12 +4,26 @@ module CrewCorner
       @connection ||= Faraday.new(:url => 'http://api.crew.dreamhack.se')
     end
 
-    def get(path, params = nil)
-      connection.get(path)
+    def get(path, options)
+      connection.get do |request|
+        request.url path
+
+        Client::filter_request!(request, options)
+      end
     end
 
-    def post(path, params = nil, body = nil)
-      connection.post(path)
+    def post(path, options, body = nil)
+      connection.post do |request|
+        request.url path
+
+        Client::filter_request!(request, options)
+      end
+    end
+
+    protected
+
+    def self.filter_request!(request, options)
+      CrewCorner.request_filter.call(request, options) unless CrewCorner.request_filter.nil?
     end
   end
 end

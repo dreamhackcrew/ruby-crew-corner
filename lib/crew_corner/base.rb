@@ -19,8 +19,8 @@ module CrewCorner
       field_types[name] = type
     end
 
-    def self.fetch(path)
-      response = CrewCorner.client.get(path)
+    def self.fetch(path, options = {})
+      response = CrewCorner.client.get(path, options)
 
       parse(response.body) unless response.body.nil?
     end
