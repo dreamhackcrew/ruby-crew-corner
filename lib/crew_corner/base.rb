@@ -22,11 +22,11 @@ module CrewCorner
     def self.fetch(path, options = {})
       response = CrewCorner.client.get(path, options)
 
-      parse(response.body) unless response.body.nil?
+      parse(response.body) if response.status == 200
     end
 
     def self.parse(body)
-      attributes_or_array = JSON.parse(body)
+      attributes_or_array = JSON.parse(body) unless body == "false"
 
       case attributes_or_array
       when Array
