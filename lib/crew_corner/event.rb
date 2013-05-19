@@ -4,6 +4,8 @@ module CrewCorner
     field :name
     field :start, :date
     field :end, :date
+    field :preparestart, :date
+    field :prepareend, :date
     field :active, :boolean
 
     def self.all
