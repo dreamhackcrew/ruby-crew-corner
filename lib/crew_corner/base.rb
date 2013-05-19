@@ -26,7 +26,7 @@ module CrewCorner
     end
 
     def self.parse(body)
-      attributes_or_array = JSON.parse(body) unless body == "false"
+      attributes_or_array = JSON.parse(body) unless body == 'false'
 
       case attributes_or_array
       when Array
@@ -48,10 +48,12 @@ module CrewCorner
           case self.field_types[attribute]
           when :date
             value.to_date unless value == '0000-00-00'
+          when :datetime
+            value.to_datetime unless value == '0000-00-00 00:00:00'
           when :integer
             value.to_i
           when :boolean
-            value == 'Y'
+            value == true || value == 'Y'
           else
             value
           end

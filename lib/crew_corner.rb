@@ -1,6 +1,7 @@
 require 'crew_corner/client'
 require 'crew_corner/base'
 require 'crew_corner/event'
+require 'crew_corner/event_info'
 require 'crew_corner/user'
 
 module CrewCorner
