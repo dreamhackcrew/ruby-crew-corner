@@ -9,4 +9,5 @@ Gem::Specification.new do |spec|
   spec.files         = ::Dir.glob("lib/**/*.rb")
 
   spec.add_development_dependency('rake')
+  spec.add_runtime_dependency('faraday')
 end

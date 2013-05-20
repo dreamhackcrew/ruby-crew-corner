@@ -1,3 +1,5 @@
+require 'faraday'
+
 module CrewCorner
   class Client
     def connection
