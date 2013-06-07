@@ -14,5 +14,9 @@ module CrewCorner
     def self.find(uid, event_id, options = {})
       fetch("/1/eventinfo/get/#{event_id}/#{uid}", options)
     end
+
+    def self.check_in(uid, event_id, options = {})
+      fetch("/1/eventinfo/checkin/#{event_id}/#{uid}", options)
+    end
   end
 end
